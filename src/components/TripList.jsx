@@ -9,7 +9,7 @@ import './TripList.css'
 export default function TripList() {
   // const [trips, setTrips] = useState([])
   const [url, setUrl] = useState('http://localhost:3000/trips')
-  const { data: trips, loading } = useFetch(url)
+  const { data: trips, loading, error } = useFetch(url)
   // const fetchTrips = useCallback(async () => {
   //   const response = await fetch(url)
   //   const json = await response.json()
@@ -30,6 +30,7 @@ export default function TripList() {
     <div className="trip-list">
       <h2>Trip List</h2>
       {loading && <p>Loading trips...</p>}
+      {error && <div>{error}</div>}
       <ul>
         {trips &&
           trips.map((trip) => (

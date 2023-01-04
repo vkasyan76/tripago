@@ -9,7 +9,7 @@ import './TripList.css'
 export default function TripList() {
   // const [trips, setTrips] = useState([])
   const [url, setUrl] = useState('http://localhost:3000/trips')
-  const { data: trips, loading, error } = useFetch(url)
+  const { data: trips, loading, error } = useFetch(url, { type: 'GET' })
   // const fetchTrips = useCallback(async () => {
   //   const response = await fetch(url)
   //   const json = await response.json()
